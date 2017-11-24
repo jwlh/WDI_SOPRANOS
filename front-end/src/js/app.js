@@ -1,6 +1,6 @@
 // app.js is the main JS file which you should define your Angular module
 angular
-  .module('sopranos', [])
+  .module('sopranos', ['ui.bootstrap', 'ngAnimate'])
   .controller('MainCtrl', MainCtrl);
 
 MainCtrl.$inject = ['$http'];
