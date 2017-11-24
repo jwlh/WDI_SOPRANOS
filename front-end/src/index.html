@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>Angular Stack Setup</title>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="angular-youtube-embed.js"></script>
   <!-- inject:js -->
   <!-- endinject -->
   <!-- inject:css -->
@@ -10,22 +12,32 @@
 </head>
 <h1>The Sopranos</h1>
 <h2>Who killed who?</h2>
+
 <body class="container" ng-controller="MainCtrl as main">
+  <h1>Score: {{main.score}}</h1>
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2">
       <div ng-repeat="question in main.questions">
-        <img class="img-fluid" ng-src="{{ question.victim.img }}" alt="{{ question.victim.name }}" width="230" height="230">
+        <img class="img-fluid" ng-src="{{ question.victim.img }}" alt="{{ question.victim.name }}" width="500" height="500">
         <p>{{ question.description }}</p>
 
         <hr>
 
         <div class="row">
+            <p>Who killed {{ question.victim.name }}?</p>
           <div class="col-lg-3 col-md-6" ng-repeat="suspect in question.suspects">
-            {{ suspect.character.name }}
-          </div>
+            <div id="{{suspect.character.id}}" class="suspect-container answers-{{question.id}}" ng-click="main.checkAnswer(suspect.character.id, question.killer.id, question.id)">
 
+
+            <img class="img-fluid" ng-src="{{ suspect.character.img }}" alt="{{ suspect.character.name }}" width="150" height="150">
+
+            <p>{{ suspect.character.name }}</p>
+            </div>
+          </div>
+          <div class="">
+            <youtube-video class="video" id="video-{{question.id}}" video-id="question.video"></youtube-video>
+          </div>
         </div>
-        <iframe class="wall-post-vid" ng-src="{{ question.video }}" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
   </div>
