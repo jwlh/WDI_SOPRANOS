@@ -25,11 +25,11 @@ Character.create(name: 'Silvio Dante', img: 'https://a1cf74336522e87f135f-2f21ac
 Character.create(name: 'Paulie "Walnuts" Gaultieri', img: 'https://pbs.twimg.com/profile_images/3086685391/d8e24368016bc8db126a682076e856f5_400x400.jpeg')
 Character.create(name: 'Tony Blundetto', img: 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/p-the-sopranos-steve-busemi.jpg')
 
-Question.create(description: 'Gunshot wound to the back of the head while snorting a line of cocaine at Satriale\'s Deli.', victim_id: 4, killer_id: 2, video: 'KA4t-lkoBko')
-Question.create(description: 'Multiple gunshot wounds (location unknown). Killed for being an FBI informant.', victim_id: 3, killer_id: 12, video: 'Bm03vt8tkdc')
-Question.create(description: 'Suffocated after suffering massive trauma brought on by a car accident.', victim_id: 2, killer_id: 1, video: 'wl04fL6A368')
-Question.create(description: 'Gunshot wound to the back of the head. Killed because of the poker robbery he attempted with Dino and Carlo.', victim_id: 7, killer_id: 6, video: 'fc5QWxQ_leI')
-Question.create(description: 'Gunshot wound to the chest; gunshot wound to the forehead.', victim_id: 8, killer_id: 5, video: '3X6AaNbZZfQ')
+Question.create(description: 'Gunshot wound to the back of the head while snorting a line of cocaine at Satriale\'s Deli.', victim_id: 4, killer_id: 2, video: 'https://www.youtube.com/embed/KA4t-lkoBko')
+Question.create(description: 'Multiple gunshot wounds (location unknown). Killed for being an FBI informant.', victim_id: 3, killer_id: 12, video: 'https://www.youtube.com/embed/Bm03vt8tkdc')
+Question.create(description: 'Suffocated after suffering massive trauma brought on by a car accident.', victim_id: 2, killer_id: 1, video: 'https://www.youtube.com/embed/wl04fL6A368')
+Question.create(description: 'Gunshot wound to the back of the head. Killed because of the poker robbery he attempted with Dino and Carlo.', victim_id: 7, killer_id: 6, video: 'https://www.youtube.com/embed/fc5QWxQ_leI')
+Question.create(description: 'Gunshot wound to the chest; gunshot wound to the forehead.', victim_id: 8, killer_id: 5, video: 'https://www.youtube.com/embed/3X6AaNbZZfQ')
 
 Suspect.create(question_id: 1, character_id: 13)
 Suspect.create(question_id: 1, character_id: 2)
