@@ -17,7 +17,7 @@
         <p>{{ question.description }}</p>
         <p>Who killed {{ question.victim.name }}?</p>
       </div>
-      <divng-repeat="suspect in question.suspects">
+      <div ng-repeat="suspect in question.suspects">
         <div>
           <img ng-src="{{ suspect.character.img }}" alt="{{ suspect.character.name }}">
         </div>
