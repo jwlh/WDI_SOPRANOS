@@ -8,7 +8,21 @@
     <!-- inject:css -->
     <!-- endinject -->
   </head>
+  <h1>The Sopranos</h1>
+  <h2>Who killed who?</h2>
   <body ng-controller="MainCtrl as main">
-    {{main.questions}}
+    <div ng-repeat="question in main.questions">
+      <div>
+        <img ng-src="{{ question.victim.img }}" alt="{{ question.victim.name }}">
+        <p>{{ question.description }}</p>
+        <p>Who killed {{ question.victim.name }}?</p>
+      </div>
+      <divng-repeat="suspect in question.suspects">
+        <div>
+          <img ng-src="{{ suspect.character.img }}" alt="{{ suspect.character.name }}">
+        </div>
+        <p>{{ suspect.character.name }}</p>
+      </div>
+    </div>
   </body>
 </html>
