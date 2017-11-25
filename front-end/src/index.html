@@ -2,6 +2,7 @@
 <html ng-app="sopranos">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Angular Stack Setup</title>
   <script src="https://www.youtube.com/iframe_api"></script>
   <script src="angular-youtube-embed.js"></script>
@@ -11,23 +12,37 @@
   <!-- endinject -->
 </head>
 <body class="container" ng-controller="MainCtrl as main">
-  <!-- <div class="modal"
-  ng-class="{'is-active': main.showVideoModal }"
-  ng-if="main.showVideoModal">
-    <div class="modal-background"></div>
-    <div class="modal-content">
-      <div class="">
-        <youtube-video class="video" id="video-{{question.id}}" video-id="question.video"></youtube-video>
-      </div>
-    </div>
-    <button class="modal-close is-large" aria-label="close" ng-click="main.showVideoModal = false" ui-sref="home"></button>
-  </div> -->
 
-  <!-- <h1>Score: {{main.score}}</h1> -->
   <div class="row">
     <div class="col-12">
-      <h1>The Sopranos</h1>
-      <h2>Who killed who?</h2>
+      <h1 class="title">The Sopranos</h1>
+      <h2 class="sub-title">Who killed who?</h2>
+      <div id="myModal" class="modal">
+        <div class="col-12">
+          <div class="col-2">
+          </div>
+          <div class="col-8 modalContent">
+            <h1 id="outcome">{{ main.outcome }}</h1>
+            <youtube-video class="video" video-id="main.video"></youtube-video>
+            <button class="close-modal" ng-click="main.hideModal()">Back to Quiz</button>
+          </div>
+          <div class="col-2">
+          </div>
+        </div>
+      </div>
+      <div id="endModal" class="modal">
+        <div class="col-12">
+          <div class="col-2">
+          </div>
+          <div class="col-8 modalContent endModal">
+            <h1>You Scored {{ main.score }}/5!</h1>
+            <h2>Would you like to play again?</h2>
+            <button ng-click="main.refreshPage()">Play Again</button>
+          </div>
+          <div class="col-2">
+          </div>
+        </div>
+      </div>
       <div class="question-container" ng-repeat="question in main.questions">
         <h2>Question {{ question.id }}: Who killed {{ question.victim.name }}?</h2>
         <div class="question-head">
@@ -36,9 +51,8 @@
           <youtube-video ng-show = "vm.answered" class="video" id="video-{{question.id}}" video-id="question.video"></youtube-video>
         </div>
         <div class="row clearfix">
-          <div class="col-md-6" ng-repeat="suspect in question.suspects">
-            <div id="{{suspect.character.id}}" class="suspect-container answers-{{question.id}} is-hoverable" ng-click="main.checkAnswer(suspect.character.id, question.killer.id, question.id)">
-
+          <div class="col-12 col-md-6" ng-repeat="suspect in question.suspects">
+            <div id="{{suspect.character.id}}" class="suspect-container answers-{{question.id}} is-hoverable" ng-click="main.checkAnswer(suspect.character.id, question.killer.id, question.id, question.video)">
 
             <img class="img-fluid float-left" ng-src="{{ suspect.character.img }}" alt="{{ suspect.character.name }}" width="150" height="150">
 

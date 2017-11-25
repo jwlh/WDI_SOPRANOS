@@ -2,6 +2,18 @@ body {
   background: #ededed;
 }
 
+.title, .sub-title {
+  text-align: center;
+}
+
+.title {
+  font-size: 80px;
+}
+
+.sub-title {
+  font-size: 30px;
+}
+
 .suspect-container {
   border: 1px solid black;
   height: 152px;
@@ -15,6 +27,10 @@ body {
   }
 }
 
+.video {
+  box-shadow: 0 0 10px white;
+}
+
 .suspect-image{
   width: 100%;
   height: 100%;
@@ -25,11 +41,19 @@ body {
 }
 
 .red {
-  background-color: red;
+  background-color: #FF5C56;
 }
 
 .green {
-  background-color: green;
+  background-color: #43B86D;
+}
+
+.text-red {
+  color: #FF5C56;
+}
+
+.text-green {
+  color: #43B86D;
 }
 
 .question-container {
@@ -61,7 +85,7 @@ p.suspect-name {
 p.cause-of-death {
   text-align: left;
   font-size: 20px;
-  margin-left: 510px;
+  margin-left: 515px;
   margin-top: 200px;
 }
 
@@ -71,4 +95,54 @@ p.cause-of-death {
 
 .clearfix {
   clear: both;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modalContent {
+  margin: 10% auto;
+  width: 620px;
+  display: block;
+}
+
+.modalContent {
+  animation: grow .25s cubic-bezier(0,0,1,1) 1;
+}
+
+@keyframes grow {
+  0% {transform: scale(0,0);}
+  50% {transform: scale(0.5,0.5);}
+  100% {transform: scale(1,1);}
+}
+
+.endModal {
+  color: white;
+  button {
+    color: black;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .main-pic {
+    float: none;
+  }
+  .question-head {
+    margin-bottom: 120px;
+  }
+  p.cause-of-death {
+    margin-left: 20px;
+    margin-top: -10px;
+    color: black;
+  }
 }
