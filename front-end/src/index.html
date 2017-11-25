@@ -23,7 +23,7 @@
           </div>
           <div class="col-8 modalContent">
             <h1 id="outcome">{{ main.outcome }}</h1>
-            <youtube-video class="video" video-id="main.video"></youtube-video>
+            <youtube-video class="video" video-id="main.video" show-info="0" ></youtube-video>
             <button class="close-modal" ng-click="main.hideModal()">Back to Quiz</button>
           </div>
           <div class="col-2">
@@ -46,9 +46,8 @@
       <div class="question-container" ng-repeat="question in main.questions">
         <h2>Question {{ question.id }}: Who killed {{ question.victim.name }}?</h2>
         <div class="question-head">
-          <img ng-hide = "vm.answered" class="img-fluid float-left main-pic" ng-src="{{ question.victim.img }}" alt="{{ question.victim.name }}" width="500" height="500">
-          <p ng-hide = "vm.answered" class="cause-of-death"><strong>Cause of Death:</strong> {{ question.description }}</p>
-          <youtube-video ng-show = "vm.answered" class="video" id="video-{{question.id}}" video-id="question.video"></youtube-video>
+          <img class="img-fluid float-left main-pic" ng-src="{{ question.victim.img }}" alt="{{ question.victim.name }}" width="500" height="500">
+          <p class="cause-of-death">Cause of Death: {{ question.description }}</p>
         </div>
         <div class="row clearfix">
           <div class="col-12 col-md-6" ng-repeat="suspect in question.suspects">

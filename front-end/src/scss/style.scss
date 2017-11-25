@@ -1,5 +1,22 @@
+// @font-face {
+//     font-family: Mobsters;
+//     src: url('./fonts/Mobsters.ttf');
+// }
+
+@font-face {
+	font-family: 'Mobsters';
+	src: url('fonts/Mobsters.ttf');
+	src: local('Mobsters'), local('Mobsters'), url('fonts/Mobsters.ttf') format('truetype');
+}
+
 body {
   background: #ededed;
+  font-family: 'Mobsters', Arial, sans-serif;
+
+}
+
+h2 {
+  font-size: 40px;
 }
 
 .title, .sub-title {
@@ -7,11 +24,11 @@ body {
 }
 
 .title {
-  font-size: 80px;
+  font-size: 100px;
 }
 
 .sub-title {
-  font-size: 30px;
+  font-size: 50px;
 }
 
 .suspect-container {
@@ -38,6 +55,7 @@ body {
 
 .suspect-text{
   text-align: center;
+  font-size: 26px;
 }
 
 .red {
@@ -66,6 +84,7 @@ body {
   box-shadow: 0 0 10px black;
   background: black;
   color: white;
+  padding-right: 10px;
 }
 
 .float-left {
@@ -79,18 +98,20 @@ p {
 p.suspect-name {
   line-height: 150px;
   text-align: center;
-  font-size: 24px;
+  font-size: 30px;
 }
 
 p.cause-of-death {
   text-align: left;
-  font-size: 20px;
+  font-size: 40px;
   margin-left: 515px;
   margin-top: 200px;
 }
 
 .main-pic {
   margin-bottom: 30px;
+  width: 500px;
+  height: 500px;
 }
 
 .clearfix {
@@ -133,16 +154,33 @@ p.cause-of-death {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 990px) {
   .main-pic {
     float: none;
+    width: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
   }
   .question-head {
     margin-bottom: 120px;
   }
   p.cause-of-death {
+    padding-left: 0px;
     margin-left: 20px;
-    margin-top: -10px;
+    margin-top: -20px;
     color: black;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .main-pic {
+    float: none;
+    width: 100%;
+    height: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .question-head {
+    height: 302px;
   }
 }
