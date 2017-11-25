@@ -9,7 +9,7 @@ function MainCtrl($http) {
   const vm = this;
   vm.score = 0;
   vm.checkAnswer = checkAnswer;
-  vm.vidShow = false;
+
 
   $http
     .get('http://localhost:3000/questions')
