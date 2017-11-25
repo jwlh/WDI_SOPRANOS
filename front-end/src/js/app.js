@@ -27,8 +27,12 @@ function MainCtrl($http) {
     for (var i = 0; i < buttons.length; i++) {
       if (buttons[i].id == killerId) {
         buttons[i].classList.add('green');
+        buttons[i].style.cursor = 'default';
+        buttons[i].classList.remove('is-hoverable');
       } else {
         buttons[i].classList.add('red');
+        buttons[i].style.cursor = 'default';
+        buttons[i].classList.remove('is-hoverable');
       }
     }
     const video = document.getElementById(`video-${questionId}`);

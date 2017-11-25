@@ -10,34 +10,33 @@
   <!-- inject:css -->
   <!-- endinject -->
 </head>
-<h1>The Sopranos</h1>
-<h2>Who killed who?</h2>
-
 <body class="container" ng-controller="MainCtrl as main">
-  <h1>Score: {{main.score}}</h1>
+  <!-- <h1>Score: {{main.score}}</h1> -->
   <div class="row">
-    <div class="col-lg-8 col-lg-offset-2">
-      <div ng-repeat="question in main.questions">
-        <img class="img-fluid" ng-src="{{ question.victim.img }}" alt="{{ question.victim.name }}" width="500" height="500">
-        <p>{{ question.description }}</p>
+    <div class="col-12">
+      <h1>The Sopranos</h1>
+      <h2>Who killed who?</h2>
+      <div class="question-container" ng-repeat="question in main.questions">
+        <h2>Question {{ question.id }}: Who killed {{ question.victim.name }}?</h2>
+        <div class="question-head">
+          <img class="img-fluid float-left main-pic" ng-src="{{ question.victim.img }}" alt="{{ question.victim.name }}" width="500" height="500">
+          <p class="cause-of-death"><strong>Cause of Death:</strong> {{ question.description }}</p>
+        </div>
+        <div class="row clearfix">
+          <div class="col-md-6" ng-repeat="suspect in question.suspects">
+            <div id="{{suspect.character.id}}" class="suspect-container answers-{{question.id}} is-hoverable" ng-click="main.checkAnswer(suspect.character.id, question.killer.id, question.id)">
 
-        <hr>
 
-        <div class="row">
-            <p>Who killed {{ question.victim.name }}?</p>
-          <div class="col-lg-3 col-md-6" ng-repeat="suspect in question.suspects">
-            <div id="{{suspect.character.id}}" class="suspect-container answers-{{question.id}}" ng-click="main.checkAnswer(suspect.character.id, question.killer.id, question.id)">
+            <img class="img-fluid float-left" ng-src="{{ suspect.character.img }}" alt="{{ suspect.character.name }}" width="150" height="150">
 
-
-            <img class="img-fluid" ng-src="{{ suspect.character.img }}" alt="{{ suspect.character.name }}" width="150" height="150">
-
-            <p>{{ suspect.character.name }}</p>
+            <p class="suspect-name">{{ suspect.character.name }}</p>
             </div>
           </div>
-          <div class="">
+          <!-- <div class="">
             <youtube-video class="video" id="video-{{question.id}}" video-id="question.video"></youtube-video>
-          </div>
+          </div> -->
         </div>
+        <hr>
       </div>
     </div>
   </div>

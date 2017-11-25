@@ -1,5 +1,18 @@
-.suspect-container{
+body {
+  background: #ededed;
+}
+
+.suspect-container {
   border: 1px solid black;
+  height: 152px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 10px black;
+  background: black;
+  color: white;
+  &.is-hoverable:hover {
+    background: #9e9e9e;
+  }
 }
 
 .red {
@@ -10,6 +23,43 @@
   background-color: green;
 }
 
-.video {
-  // height: 0px;
+.question-container {
+  margin: 20px auto;
+}
+
+.question-head {
+  height: 502px;
+  border: 1px solid black;
+  box-shadow: 0 0 10px black;
+  background: black;
+  color: white;
+}
+
+.float-left {
+  float: left;
+}
+
+p {
+  margin: 0;
+}
+
+p.suspect-name {
+  line-height: 150px;
+  text-align: center;
+  font-size: 24px;
+}
+
+p.cause-of-death {
+  text-align: left;
+  font-size: 20px;
+  margin-left: 510px;
+  margin-top: 200px;
+}
+
+.main-pic {
+  margin-bottom: 30px;
+}
+
+.clearfix {
+  clear: both;
 }
