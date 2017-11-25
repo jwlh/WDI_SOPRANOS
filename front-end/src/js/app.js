@@ -9,7 +9,7 @@ function MainCtrl($http) {
   const vm = this;
   vm.score = 0;
   vm.checkAnswer = checkAnswer;
-
+  vm.answered= false;
 
   $http
     .get('http://localhost:3000/questions')
@@ -35,10 +35,7 @@ function MainCtrl($http) {
         buttons[i].classList.remove('is-hoverable');
       }
     }
-    const video = document.getElementById(`video-${questionId}`);
-    video.setAttribute('height', 300);
-
-    console.log(video);
+    vm.answered = true;
 
   }
 }
