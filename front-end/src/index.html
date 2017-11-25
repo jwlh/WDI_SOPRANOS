@@ -16,27 +16,27 @@
 <body class="container" ng-controller="MainCtrl as main">
   <h1>Score: {{main.score}}</h1>
   <div class="row">
-    <div class="col-lg-8 col-lg-offset-2">
+    <div class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
       <div ng-repeat="question in main.questions">
-        <img class="img-fluid" ng-src="{{ question.victim.img }}" alt="{{ question.victim.name }}" width="500" height="500">
-        <p>{{ question.description }}</p>
+        <img class="img-fluid victim-image" ng-src="{{ question.victim.img }}" alt="{{ question.victim.name }}">
+        <h3 class"victim-text">{{ question.description }}</h3>
 
         <hr>
 
         <div class="row">
-            <p>Who killed {{ question.victim.name }}?</p>
-          <div class="col-lg-3 col-md-6" ng-repeat="suspect in question.suspects">
+            <h2>Who killed {{ question.victim.name }}?</h2>
+          <div class="col-md-3 col-xs-6" ng-repeat="suspect in question.suspects">
             <div id="{{suspect.character.id}}" class="suspect-container answers-{{question.id}}" ng-click="main.checkAnswer(suspect.character.id, question.killer.id, question.id)">
 
 
-            <img class="img-fluid" ng-src="{{ suspect.character.img }}" alt="{{ suspect.character.name }}" width="150" height="150">
+            <img class="img-fluid suspect-image" ng-src="{{ suspect.character.img }}" alt="{{ suspect.character.name }}">
 
-            <p>{{ suspect.character.name }}</p>
+            <h4 class="suspect-text">{{ suspect.character.name }}</h4>
             </div>
           </div>
-          <div class="">
+          <!-- <div class="">
             <youtube-video class="video" id="video-{{question.id}}" video-id="question.video"></youtube-video>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
