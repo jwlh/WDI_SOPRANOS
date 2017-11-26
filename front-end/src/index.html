@@ -47,7 +47,7 @@
         <h2>Question {{ question.id }}: Who killed {{ question.victim.name }}?</h2>
         <div class="question-head">
           <img class="img-fluid float-left main-pic" ng-src="{{ question.victim.img }}" alt="{{ question.victim.name }}">
-          <p class="cause-of-death">Cause of Death: {{ question.description }}</p>
+          <p class="cause-of-death">Cause of Death:<br> {{ question.description }}</p>
         </div>
         <div class="row clearfix">
           <div class="col-12 col-md-6" ng-repeat="suspect in question.suspects">
