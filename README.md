@@ -4,7 +4,7 @@
 
 This little game was the product of a one-day hackathon-style mini project. Designed as a task for us to practice a bit of Ruby, it features a Rails API and an Angular front-end.
 
-As Sopranos fans, my partner and I pair-programmed this short 5-question quiz to test people's knowledge of some of the TV show's famous murders. Once an answer is given, the user can watch a clip of the whacking. It was a lot of fun to make and nice to get more familiar with a different back-end language as our course is mostly Javascript-focused.
+As Sopranos fans, my partner and I pair-programmed this short 5-question quiz to test people's knowledge of some of the TV show's famous murders. Once an answer is given, the user can watch a clip of the whacking. It was a lot of fun to make and nice to get more familiar with a different language as our course is mostly JavaScript-focused.
 
 <img src="https://i.imgur.com/bDUSRm4.jpg" width="400"> <img src="https://i.imgur.com/9El83ka.jpg" width="400">
 
