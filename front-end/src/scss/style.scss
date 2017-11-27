@@ -6,13 +6,12 @@
 @font-face {
 	font-family: 'Mobsters';
 	src: url('fonts/Mobsters.ttf');
-	src: local('Mobsters'), local('Mobsters'), url('fonts/Mobsters.ttf') format('truetype');
+	src: local('Mobsters'), url('/fonts/Mobsters.ttf') format('truetype');
 }
 
 body {
   background: #ededed;
-  font-family: 'Mobsters', Arial, sans-serif;
-
+  font-family: 'Avant Garde', 'Arial', sans-serif;
 }
 
 h2 {
@@ -24,7 +23,8 @@ h2 {
 }
 
 .title {
-  font-size: 100px;
+  font-size: 150px;
+  font-family: 'Mobsters', Arial, sans-serif;
 }
 
 .sub-title {
@@ -105,7 +105,7 @@ p.cause-of-death {
   text-align: left;
   font-size: 40px;
   margin-left: 515px;
-  margin-top: 200px;
+  margin-top: 140px;
 }
 
 .main-pic {
